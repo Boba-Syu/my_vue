@@ -1,7 +1,7 @@
 <template>
-    <div>
-      <p>{{msg}}</p>
-    </div>
+  <div>
+    <p>{{msg}}</p>
+  </div>
 </template>
 
 <script>
