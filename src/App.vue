@@ -3,7 +3,8 @@
     <Header/>
     <img src="./assets/logo.png">
     <HelloWorld/>
-    <Test/>
+    <!--传值给子组件-->
+    <Test :appData="appData"/>
     <Footer/>
   </div>
 </template>
@@ -16,6 +17,11 @@
 
     export default {
         name: 'App',
+        data() {
+            return {
+                appData: '父组件的值',
+            }
+        },
         components: {
             Footer,
             Header,
@@ -25,7 +31,7 @@
     }
 </script>
 
-<style  >
+<style>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

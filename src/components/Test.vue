@@ -1,6 +1,7 @@
 <template>
   <div class="test">
     <p>{{msg}}</p>
+    <p>{{appData}}</p>
     <ul>
       <li @clict="data.show = !data.show" v-for="(data, index) in list" :key="index">
         <h2 v-show="data.show">{{data.name}}</h2>
@@ -12,6 +13,8 @@
 <script>
     export default {
         name: "test",
+        // 接受父组件的传值
+        props: ['appData'],
         data() {
             return {
                 msg: '这是一个学习模块',
