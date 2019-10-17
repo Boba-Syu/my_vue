@@ -1,9 +1,9 @@
 <template>
   <div class="test">
     <p>{{msg}}</p>
-    <p>{{appData}}</p>
+    <p @click="changeData">{{appData}}</p>
     <ul>
-      <li @clict="data.show = !data.show" v-for="(data, index) in list" :key="index">
+      <li @click="data.show = !data.show" v-for="(data, index) in list" :key="index">
         <h2 v-show="data.show">{{data.name}}</h2>
       </li>
     </ul>
@@ -23,10 +23,15 @@
                     {name: "Java", show: true},
                     {name: "JavaScript", show: true},
                     {name: "Python", show: true},
-                    {name: "Golang", show: true},
+                    {name: "GoLang", show: true},
                     {name: "Kotlin", show: true},
                     {name: "Ruby", show: true},
                 ]
+            }
+        },
+        methods: {
+            changeData() {
+                this.$emit("appDataChange", "changed.");
             }
         }
     }

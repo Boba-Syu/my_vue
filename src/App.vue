@@ -4,7 +4,7 @@
     <img src="./assets/logo.png">
     <HelloWorld/>
     <!--传值给子组件-->
-    <Test :appData="appData"/>
+    <Test  @appDataChange="appDataChange" :appData="appData"/>
     <Footer/>
   </div>
 </template>
@@ -27,6 +27,11 @@
             Header,
             HelloWorld,
             Test
+        },
+        methods: {
+            appDataChange(title) {
+                this.appData = title;
+            }
         }
     }
 </script>
